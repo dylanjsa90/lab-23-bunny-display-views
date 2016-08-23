@@ -8,8 +8,8 @@ describe('testing controllers used in routing', function() {
     angular.mock.inject(($controller) => {
       this.homeController = new $controller('HomeController');
       this.fullsizeController = new $controller('FullsizeController');
-      this.thumbnailController = new $controller('thumbnailController');
-      this.errorController = new $controller('errorController');
+      this.thumbnailController = new $controller('ThumbnailController');
+      this.errorController = new $controller('ErrorController');
     });
   });
 
@@ -30,10 +30,8 @@ describe('testing controllers used in routing', function() {
 
   it('fullsize controller should test for valid id', () => {
     expect(this.fullsizeController.isValidId('x')).toEqual(false);
-    expect(this.fullsizeController.isValidId(5)).toEqual(true);
+    expect(this.fullsizeController.isValidId(3)).toEqual(true);
   });
 
-  it('error controller test', () => {
-    expect(this.errorController.errorMessage.lengt > 0).toEqual(true);
-  });
+
 });

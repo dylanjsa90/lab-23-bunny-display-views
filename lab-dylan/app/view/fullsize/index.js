@@ -11,6 +11,7 @@ demoApp.controller('FullsizeController', ['$routeParams', '$rootScope', '$locati
     if (!isFinite(id)) return false;
     if (id < 1) return false;
     if (typeof(this.images[id - 1]) === 'undefined') return false;
+    return true;
   };
 
   let id = Number.parseInt($routeParams.id);
